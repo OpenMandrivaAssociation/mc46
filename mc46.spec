@@ -2,13 +2,13 @@
 
 Name:		mc46
 Version:	4.6.3
-Release:	%mkrel 1
+Release:	2
 Summary:	So called russian fork of Midnight Commander
 License:	GPLv2
 Group:		File tools
 URL:		http://mc.redhat-club.org
 Source0:	%{oname}-%{version}.tar.bz2
-BuildRequires:	glib2-devel
+BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	gpm-devel
 BuildRequires:	X11-devel
 BuildRequires:	bison
@@ -33,17 +33,12 @@ specific files. This is "revived" version with many patches applied.
 %make
 
 %install
-%__rm -rf %{buildroot}
 %makeinstall_std
 %__cp %{buildroot}%{_datadir}/%{oname}/bin/* %{buildroot}%{_libdir}/%{oname}/
 
 %find_lang %{oname} --with-man
 
-%clean
-%__rm -rf %{buildroot}
-
 %files -f %{oname}.lang
-%defattr(-,root,root)
 %doc COPYING README INSTALL AUTHORS
 %{_bindir}/*
 %{_libdir}/%{oname}
@@ -51,3 +46,29 @@ specific files. This is "revived" version with many patches applied.
 %{_mandir}/man1/*
 %{_datadir}/%{oname}
 
+
+
+%changelog
+* Thu Feb 16 2012 Andrey Bondrov <abondrov@mandriva.org> 4.6.3-1mdv2011.0
++ Revision: 775257
+- imported package mc46
+
+
+* Sat Nov 07 2009 Andrey Bondrov <bondrov@math.dvgu.ru> 4.6.3-1mib2010.0
+- Build for 2010.0
+- Added glib2-devel, gpm-devel and libx11-devel to BuildRequires
+- Added configure options
+- MIB (Mandriva Italia Backports)  - http://mib.pianetalinux.org/
+
+* Thu Dec 16 2008 Andrey Bondrov <bondrov@math.dvgu.ru> 4.6.3-1mib2008.1
+- 4.6.3 Final
+- MIB (Mandriva Italia Backports)  - http://mib.pianetalinux.org/
+
+* Thu Nov 28 2008 Andrey Bondrov <bondrov@math.dvgu.ru> 4.6.3-svn92.1mib2008.1
+- SVN revision 92.
+- New features added (Shift+F1/F2, Alt+. and Alt+.)
+- MIB (Mandriva Italia Backports)  - http://mib.pianetalinux.org/
+
+* Thu Nov 26 2008 Andrey Bondrov <bondrov@math.dvgu.ru> 4.6.2-svn47.1mib2008.1
+- First MIB build
+- MIB (Mandriva Italia Backports)  - http://mib.pianetalinux.org/
