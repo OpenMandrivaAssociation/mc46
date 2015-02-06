@@ -2,7 +2,7 @@
 
 Name:		mc46
 Version:	4.6.3
-Release:	2
+Release:	3
 Summary:	So called russian fork of Midnight Commander
 License:	GPLv2
 Group:		File tools
