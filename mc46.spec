@@ -6,7 +6,7 @@ Release:	3
 Summary:	So called russian fork of Midnight Commander
 License:	GPLv2
 Group:		File tools
-URL:		http://mc.redhat-club.org
+URL:		https://mc.redhat-club.org
 Source0:	%{oname}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	gpm-devel
