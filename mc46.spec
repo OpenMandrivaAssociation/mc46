@@ -8,6 +8,11 @@ License:	GPLv2
 Group:		File tools
 URL:		https://mc.redhat-club.org
 Source0:	%{oname}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	gpm-devel
 BuildRequires:	X11-devel
